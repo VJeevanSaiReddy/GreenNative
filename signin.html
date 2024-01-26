@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Signin</title>
+    <style>
+        body{
+            background-color: #eff5ea;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top:60px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 50%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        div.checkbox {
+            display: flex;
+            align-items: center;
+            display: inline-flex;
+        }
+
+        div.checkbox input {
+            margin-right: 5px;
+            margin-left:0px;
+        }
+        .checkbox p{
+            margin-left: 5px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #captchaContainer {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        #captchaText {
+            padding: 8px;
+            border: 1px solid #ccc;
+            margin-right: 5px;
+        }
+        .navbar {
+            background-color: #7ebe69;
+            overflow: hidden;
+            position: fixed;
+            top:0px;
+            height:60px;
+            width:100%;
+            left:0px;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size:25px;
+        }
+        .nav-right {
+            float: right;
+}
+.social-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #7ebe69;
+            padding: 10px 0;
+            z-index: 999;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .social-bar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .social-bar li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .social-bar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .social-bar a i {
+            display: block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+        .social-bar a i:hover {
+            background-color: #555;
+        } 
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a>GREENNATIVE®</a>
+        <div class="nav-right">
+            <a href="project.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="About.html">About</a>
+            <a href="Signup.html">SignUp</a>
+        </div>
+    </div>
+    <form>
+        <h1 style="color:green;">Signin</h1>
+        <label for="email">Email</label>
+        <input type="email" id="email" class="email1" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" class="password" required>
+        <div class="checkbox">
+            <input type="checkbox" id="notRobotCheckbox" name="notRobotCheckbox" required>
+            <label for="notRobotCheckbox">I am not a robot</label>
+        </div>
+        <div id="captchaContainer">
+            <label for="captchaInput">Captcha:</label>
+            <span id="captchaText"></span>
+            <input type="text" id="captchaInput" name="captchaInput" required>
+            <button type="button" onclick="generateCaptcha()">Refresh Captcha</button>
+        </div>
+        
+        <button type="button" onclick="validateCaptcha()">checkcaptcha</button>
+        <button type="submit" value="submit">submit</button>
+    </form>
+    <div class="social-bar">
+        <ul>
+            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://mail.google.com/"><i class="far fa-envelope"></i></a></li>
+        </ul>
+    </div>
+    <script>
+     function generateCaptcha() {
+            var captcha = Math.floor(Math.random() * 1000000);
+            document.getElementById("captchaText").innerText = captcha;
+            document.getElementById("captchaInput").value = "";
+        }
+
+        function validateCaptcha() {
+            var enteredCaptcha = document.getElementById("captchaInput").value;
+            var displayedCaptcha = document.getElementById("captchaText").innerText;
+            if (enteredCaptcha === displayedCaptcha) {
+                var isNotRobotChecked = document.getElementById("notRobotCheckbox").checked;
+
+                if (isNotRobotChecked) {
+                    alert("Captcha is correct, and the 'I am not a robot' checkbox is checked. Form submission allowed.password matched");
+                } else {
+                    alert("Please check the 'I am not a robot' checkbox.");
+                }
+            } else {
+                alert("Captcha is incorrect. Please try again!!");
+                generateCaptcha(); 
+            }
+        }
+        function openhtml(){
+            window.location.href = "signin.html";
+        }
+
+        generateCaptcha();
+    </script>
+</body>
+</html>

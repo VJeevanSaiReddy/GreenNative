@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Eagle Lake">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>GreenNative</title>
+    <style>
+        body {
+            font-family: Alegreya;
+            background-color: #eff5ea;
+        }
+        .sidebar {
+            height: 100%;
+            width: 0px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #c0e2b0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #110606;
+            display: block;
+            transition: 0.3s;
+            font-family: Alegreya;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #719e4c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            text-align: left;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+
+        .openbtn:hover {
+            background-color: #444;
+        }
+
+        #main {
+            transition: margin-left .5s;
+        }
+
+        #content {
+            margin-left: 120px;
+            margin-right: 0px;
+            padding: 0px;
+            
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #poem {
+            margin: auto;
+            width: 50%;
+            border: 3px solid #719e4c;
+            padding: 10px;
+            background-color: #f7f7f7;
+        }
+
+        .testimonial {
+            padding: 20px;
+            border-left: 4px solid #719e4c;
+            background-color: #f7f7f7;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .highlight-section {
+            background-color: #eff5ea;
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        #division {
+            background-image: url(https://media.istockphoto.com/id/1367756024/vector/green-watercolor-background-illustration.jpg?s=612x612&w=0&k=20&c=0NharLiQndU9LeBxt0Lr3RvjngfnUwokM3PhvWqWhV0=);
+            align-items: center;
+            background-size: 100% 100%;
+            height: 380px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom:30px;
+        }
+        #division1 {
+            background-image: url(https://media.istockphoto.com/id/1367756024/vector/green-watercolor-background-illustration.jpg?s=612x612&w=0&k=20&c=0NharLiQndU9LeBxt0Lr3RvjngfnUwokM3PhvWqWhV0=);
+            align-items: center;
+            background-size: 100% 100%;
+            height: 380px;
+            display: flex;
+            justify-content:center;
+            flex-direction: column;
+        }
+
+        .bg-text {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #110606;
+            font-size: 50px;
+            text-align: center;
+            text-shadow: 2px 2px #eff5ea;
+        }
+
+        .tagline {
+            color: #110606;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .line {
+            width: 50%;
+            height: 2px;
+            background-color: #110606;
+            margin: 10px auto;
+        }
+        .social-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #7ebe69;
+            padding: 10px 0;
+            z-index: 999;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .social-bar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .social-bar li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .social-bar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .social-bar a i {
+            display: block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+        .social-bar a i:hover {
+            background-color: #555;
+        } 
+    </style>
+</head>
+<body>
+    <h1 style="color: #719e4c; top: 0px; text-align: center; font-family: 'Eagle Lake'; font-size: 50px;">GREENNATIVE®</h1>
+    <div id="sideone" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+        <a href="about.html">About</a>
+        <a href="signup.html">SignUp</a>
+        <a href="shop.html">Shop</a>
+        <a href="Contact.html">Contact</a>
+        <a href="Community.html">Community</a>
+    </div>
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">☰ MENU</button>
+    </div>
+    <div id="content">
+        <div id="division1">
+            <div class="bg-text">
+                100% Organic Products
+            </div>
+            <div class="line"></div>
+            <div class="tagline">
+                Agriculture is Life
+            </div>
+        </div>
+        <label style="font-size: 40px; color: rgb(13, 40, 2);">Welcome to Green Native: Where Sustainability Meets Style!!</label><br>
+        <label style="font-size: 20px;">🌿 Embrace a Greener Lifestyle, Embrace Green Native 🌿</label>
+        <p style="font-size: 25px;">At Green Native, we're not just a brand; we're a movement towards a sustainable and stylish future. Step into a world where eco-conscious living meets modern elegance. Join us in the journey to make every choice count for a healthier planet.</p>
+        <div id="poem">
+            <p style="text-align: center;font-size:20px;">In the heart of nature's embrace, a haven blooms,<br>
+                Where Green Native whispers through fragrant blooms.<br>
+                A tapestry woven with threads of vibrant green,<br>
+                A sanctuary of sustainability, yet unseen.<br>
+                In every leaf, a tale of conscious grace,<br>
+                Echoing a promise for a brighter space.<br>
+                Rooted deep in Earth's evergreen embrace,<br>
+                Green Native blossoms, a symbol of solace.<br>
+                The dance of leaves, a rhythm so divine,<br>
+                Each product, a verse in nature's grand design.<br>
+                Sustainable echoes in the wind's soft hum,<br>
+                A melody of harmony, where all hearts become one.<br>
+                Oh, Green Native, your branches reach high,<br>
+                Cradling dreams beneath the open sky.<br>
+                In your foliage, whispers of a green decree,<br>
+                A poetic ode to a world where all hearts are free.<br>
+                
+                Through each endeavor, a pledge to Earth we make,<br>
+                In every step, a promise not to forsake.<br>
+                A symphony of green, a poetic native's song,<br>
+                In harmony with nature, where we all belong.<br>
+              </p>
+        </div>
+        <div class="highlight-section">
+            <h2 style="color: rgb(13, 40, 2)">Customer Testimonials</h2>
+            <div class="testimonial">
+                <p>"GreenNative has completely changed the way I approach my lifestyle. Their products are not only eco-friendly but also stylish. I feel proud to support such a wonderful brand!"</p>
+                <p style="text-align: right;">-Sweety</p>
+            </div>
+            <div class="testimonial">
+                <p>"I'm amazed by the commitment of GreenNative towards sustainability. Their dedication to the environment is truly inspiring, and their products reflect that commitment perfectly!"</p>
+                <p style="text-align: right;">- Prasad</p>
+            </div>
+            <div id="division">
+                <p style="font-size: 70px; text-align: center; border-top: 300px; color: rgb(13, 40, 2);">GREENNATIVE®</p><br>
+                <a href="https://www.instagram.com/" style="color: rgb(13, 40, 2); padding-bottom: 15px;"><i class="fab fa-instagram"></i>
+                    FOLLOW US ON INSTAGRAM</a>
+                    <a href="https://twitter.com/" style="color:rgb(13, 40, 2);"><i class="fab fa-twitter"></i> 
+                        FOLLOW US ON X</a>
+                    <p>/Made By JEEVANSAIREDDY/</p>
+            </div>
+        </div>
+    </div>
+    <div class="social-bar">
+      <ul>
+          <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="https://mail.google.com/"><i class="far fa-envelope"></i></a></li>
+      </ul>
+  </div>
+    <script>
+        function openNav() {
+            document.getElementById("sideone").style.width = "240px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }   
+        function closeNav() {
+            document.getElementById("sideone").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>    
+    </body>
+</html> 
